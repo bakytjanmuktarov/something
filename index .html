@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Письмо для принцессы</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Montserrat:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<div id="floaters"></div>
+
+<main class="stage">
+
+  <!-- ЭКРАН 1: приветствие -->
+  <section class="screen on" id="s-intro">
+    <h1>Привет, Бикусь </h1>
+    <p class="sub">у меня для тебя сюрприз<br>в честь дня принцесс<br>ты готова?</p>
+    <button class="btn pulse" id="go-open" type="button">нажми, чтобы открыть</button>
+  </section>
+
+  <!-- ЭКРАН 2: конверт -->
+  <section class="screen" id="s-env">
+    <div class="env-wrap">
+      <button class="env" id="env" type="button" aria-label="Конверт">
+        <div class="env-back"></div>
+        <div class="paper">Самой красивой девочке</div>
+        <div class="env-front"></div>
+        <div class="flap"></div>
+        <div class="seal">❤</div>
+      </button>
+    </div>
+    <p class="hint" id="env-hint">(нажми, чтобы открыть конверт)</p>
+  </section>
+
+  <!-- ЭКРАН 3: письмо. Каждый <p> это один абзац. Можно добавлять и удалять. -->
+  <section class="screen" id="s-letter">
+    <article class="letter">
+      <h2>Самой красивой девочке</h2>
+      <p>Слов не хватит, чтобы сказать, как много ты для меня значишь.</p>
+      <p>При каждой встрече с тобой даже самые обычные дни становятся ярче, а в любых местах уютно.</p>
+      <p>Сегодня день принцесс, а значит и твой день тоже.</p>
+    </article>
+    <button class="btn dark" id="to-memories" type="button">Нажми чтобы открыть следующую страницу</button>
+  </section>
+
+  <!-- ЭКРАН 4: воспоминания. Один <figure> это одно фото.
+       src это путь к картинке, подпись внутри <figcaption>.
+       Хочешь ещё фото: скопируй целый <figure>...</figure> и поменяй src и подпись. -->
+  <section class="screen" id="s-mem">
+    <h3>твоя галлеря чтоли</h3>
+    <div class="gallery">
+      <button class="nav" id="prev" type="button" aria-label="Назад">‹</button>
+
+      <figure class="photo">
+        <img src="photos/1.jpg" alt="Фото 1">
+        <figcaption class="cap">самая красивая девочка</figcaption>
+      </figure>
+
+      <figure class="photo">
+        <img src="photos/2.jpg" alt="Фото 2">
+        <figcaption class="cap">я влюблен в тебя с этих времен</figcaption>
+      </figure>
+
+      <figure class="photo">
+        <img src="photos/3.jpg" alt="Фото 3">
+        <figcaption class="cap">надеюсь что у неё все получится</figcaption>
+      </figure>
+
+      <figure class="photo">
+        <img src="photos/4.jpg" alt="Фото 4">
+        <figcaption class="cap">букет из твоего имени</figcaption>
+      </figure>
+
+
+      <button class="nav" id="next" type="button" aria-label="Вперёд">›</button>
+    </div>
+    <div class="dots" id="dots"></div>
+    <button class="btn" id="to-final" type="button" hidden>дальше</button>
+  </section>
+
+  <!-- ЭКРАН 5: финал -->
+  <section class="screen" id="s-final">
+    <div class="final">
+      <h2>И на этом пока всё</h2>
+      <p>Надеюсь что у тя всё получится в твоем блоге.<br>ну и всего наилучшего по базе</p>
+      <svg class="dancer" viewBox="0 0 120 130" role="img" aria-label="Танцующее сердечко">
+        <g stroke="#7a2a52" stroke-width="5" stroke-linecap="round" fill="none">
+          <path d="M44 100 L32 124 L20 124"/><path d="M76 100 L90 120 L102 114"/>
+          <path d="M24 66 L8 82"/><path d="M96 66 L112 48"/>
+        </g>
+        <path d="M60 104 C14 72 10 34 34 22 C48 15 58 24 60 32 C62 24 72 15 86 22 C110 34 106 72 60 104 Z" fill="#ff6fa5" stroke="#7a2a52" stroke-width="4" stroke-linejoin="round"/>
+        <circle cx="46" cy="52" r="4.5" fill="#7a2a52"/><circle cx="74" cy="52" r="4.5" fill="#7a2a52"/>
+        <path d="M50 66 Q60 76 70 66" stroke="#7a2a52" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <circle cx="38" cy="62" r="5" fill="#ff9fc2"/><circle cx="82" cy="62" r="5" fill="#ff9fc2"/>
+      </svg>
+      <button class="replay" id="replay" type="button">(нажми, чтобы посмотреть ещё раз)</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
